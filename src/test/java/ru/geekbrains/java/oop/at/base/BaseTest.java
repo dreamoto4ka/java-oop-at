@@ -15,7 +15,7 @@ public abstract class BaseTest {
     public WebDriverWait wait15second;
 
     @BeforeEach
-    public void beforeAll() throws InterruptedException {
+    public void baseTestBeforeAll() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -26,6 +26,8 @@ public abstract class BaseTest {
         chromeDriver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         chromeDriver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
 
+        chromeDriver.manage().window().maximize();
+
         chromeDriver.get("https://geekbrains.ru/events");
 
         wait15second = new WebDriverWait(chromeDriver, 15);
@@ -33,7 +35,7 @@ public abstract class BaseTest {
 
 
     @AfterEach
-    public void afterAll() {
+    public void BaseTestAfterAll() {
         chromeDriver.quit();
     }
 
