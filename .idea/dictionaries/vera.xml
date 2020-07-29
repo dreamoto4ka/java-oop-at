@@ -1,9 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="vera">
     <words>
+      <w>aspectjweaver</w>
       <w>chromedriver</w>
       <w>empopup</w>
       <w>geekbrains</w>
+      <w>javaagent</w>
       <w>webdriver</w>
     </words>
   </dictionary>

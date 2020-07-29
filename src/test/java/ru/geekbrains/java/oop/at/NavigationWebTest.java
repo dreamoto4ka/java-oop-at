@@ -4,13 +4,10 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.geekbrains.java.oop.at.base.BaseWebTest;
-import ru.geekbrains.java.oop.at.block.Navigation;
-import ru.geekbrains.java.oop.at.page.BasePage;
+import ru.geekbrains.java.oop.at.page.ContentPage;
 
 import java.util.stream.Stream;
 
@@ -37,27 +34,19 @@ public void  beforeEach() {
     @AfterEach
     void tearDown() {
 
-//        BasePage basePage = new BasePage();
-//
-//        wait15second.until(ExpectedConditions.visibilityOf(
-//                basePage.getHeader()));
-//        wait15second.until(ExpectedConditions.visibilityOf(
-//                basePage.getFooter()));
-//    }
-
-        BasePage basePage = PageFactory.initElements(driver, BasePage.class);
+        ContentPage contentPage = PageFactory.initElements(driver, ContentPage.class);
 
         wait15second.until(ExpectedConditions.visibilityOf(
-                basePage.getHeader()));
+                contentPage.getHeader()));
         wait15second.until(ExpectedConditions.visibilityOf(
-                basePage.getFooter()));
+                contentPage.getFooter()));
     }
 
     @DisplayName("Блог")
     @Test
     public void posts() {
         String namePage="Блог";
-        BasePage basePage = new BasePage(driver);
+        ContentPage basePage = new ContentPage(driver);
 
         basePage.getNavigation().getButton(namePage).click();
         basePage.getButtonClosePopUp1().click();
@@ -70,7 +59,7 @@ public void  beforeEach() {
     @ParameterizedTest
     @MethodSource("dataProvider")
     public void courses(String namePage) {
-        BasePage basePage = new BasePage(driver);
+        ContentPage basePage = new ContentPage(driver);
         basePage.getNavigation().getButton(namePage).click();
         basePage.checkNamePage(namePage);
     }

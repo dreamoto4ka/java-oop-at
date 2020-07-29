@@ -23,24 +23,24 @@ public class AuthorizationPage {
         PageFactory.initElements(driver, this);
     }
 
-    public BasePage authorization(String login, String password) {
+    public ContentPage authorization(String login, String password) {
         inputLogin.sendKeys(login);
         inputPassword.sendKeys(password);
 
         buttonSingIn.click();
 
-        return new BasePage(driver);
+        return new ContentPage(driver);
     }
 
-    public WebElement getInputLogin() {
-        return inputLogin;
-    }
-
-    public WebElement getInputPassword() {
-        return inputPassword;
-    }
-
-    public WebElement getButtonSingIn() {
-        return buttonSingIn;
-    }
+//    public WebElement getInputLogin() {
+//        return inputLogin;
+//    }
+//
+//    public WebElement getInputPassword() {
+//        return inputPassword;
+//    }
+//
+//    public WebElement getButtonSingIn() {
+//        return buttonSingIn;
+//    }
 }
