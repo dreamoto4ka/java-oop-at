@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-public abstract class BaseWebTest {
+public abstract class BeforeAndAfterStep {
 
     public WebDriver driver;
     public WebDriverWait wait15second;
@@ -29,7 +29,7 @@ public abstract class BaseWebTest {
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        wait15second = new WebDriverWait(driver,15);
+        wait15second = new WebDriverWait(driver, 15);
     }
 
 
