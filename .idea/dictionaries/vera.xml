@@ -3,10 +3,13 @@
     <words>
       <w>aspectjweaver</w>
       <w>chromedriver</w>
+      <w>doxia</w>
       <w>empopup</w>
       <w>geekbrains</w>
       <w>javaagent</w>
       <w>webdriver</w>
+      <w>xright</w>
+      <w>yyyymmdd</w>
     </words>
   </dictionary>
 </component>

@@ -52,7 +52,6 @@ public class HeaderBlock extends BasePageObject {
 
     public HeaderBlock(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     @Step("проверка что имя страницы: {exampleNamePage}")

@@ -36,7 +36,6 @@ public class LeftNavigation extends BasePageObject {
 
     public LeftNavigation(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
 

@@ -39,9 +39,9 @@ public class SearchTabsBlock extends BasePageObject {
 
     public SearchTabsBlock(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
+    @Step("Нажатие на tab: {tab}")
     public void clickTab(Tab tab) {
         getTab(tab).click();
     }

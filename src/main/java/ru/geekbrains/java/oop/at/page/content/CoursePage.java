@@ -1,5 +1,6 @@
 package ru.geekbrains.java.oop.at.page.content;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,9 +24,9 @@ public class CoursePage extends ContentBasePage {
     public CoursePage(WebDriver driver) {
         super(driver);
         this.contentNavigationCourseBlock = new ContentNavigationCourseBlock(driver);
-        PageFactory.initElements(driver, this);
     }
 
+    @Step("Настройка фильтра курсов: {args}")
     public CoursePage configFilter(String... args) {
         for (String test : args) {
             WebElement element = findElement(filterList, test);
@@ -34,6 +35,7 @@ public class CoursePage extends ContentBasePage {
         return this;
     }
 
+    @Step("Проверка отображения курсов: {args}")
     public CoursePage checkingDisplayedCourses(String... args) {
         for (String test : args) {
             WebElement element = findElement(courseList, test);
@@ -48,7 +50,6 @@ public class CoursePage extends ContentBasePage {
 
     @Override
     public CoursePage openUrl() {
-        driver.get("https://geekbrains.ru/courses");
+        super.openUrl("https://geekbrains.ru/courses");
         return this;
-    }
-}
+    }}
