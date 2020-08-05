@@ -8,7 +8,8 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 import ru.geekbrains.java.oop.at.base.BeforeAndAfterStep;
 import ru.geekbrains.java.oop.at.page.sing.AuthorizationPage;
 
-@Execution(ExecutionMode.CONCURRENT)@Feature("Авторизация")
+@Execution(ExecutionMode.CONCURRENT)
+@Feature("Авторизация")
 @Story("Проверка авторизации")
 @DisplayName("Проверка авторизации")
 public class AuthorizationWebTest extends BeforeAndAfterStep {

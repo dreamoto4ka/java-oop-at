@@ -8,7 +8,7 @@ import ru.geekbrains.java.oop.at.page.content.base.ContentBasePage;
 public class SearchPage extends ContentBasePage {
 
     @Getter
-    private SearchTabsBlock searchTabsBlock;
+    private final SearchTabsBlock searchTabsBlock;
 
     public SearchPage(WebDriver driver) {
         super(driver);
